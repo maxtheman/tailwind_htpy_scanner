@@ -5,10 +5,14 @@ description = "Add your description here"
 readme = "README.md"
 authors = [{ name = "Max Caldwell", email = "max@scriptt.ai" }]
 requires-python = ">=3.12"
-dependencies = [
-    "pytest>=8.3.4",
-    "watchdog>=6.0.0",
-]
+dependencies = ["pytest>=8.3.4", "watchdog>=6.0.0"]
+
+[project.scripts]
+tailwind-htpy-scan = "tailwind_htpy_scanner.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
 
 [build-system]
 requires = ["hatchling"]
